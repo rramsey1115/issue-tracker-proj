@@ -135,7 +135,6 @@ module.exports = function (app) {
 
     //delete request starts here-------------------------------------------------------
     .delete(async (req, res) => {
-      //delete starts here
       let projectName = req.params.project;
       const { _id } = req.body;
       if (!_id) {
