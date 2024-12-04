@@ -20,12 +20,11 @@ const Issue = mongoose.model("Issue", IssueSchema);
 //create project schema (blueprint) for your projects you will create issues for
 const ProjectSchema = new Schema({
   name: { type: String, required: true },
-  issues: [IssueSchema]
+  issues: [IssueSchema],
 });
 
 //create Project model to export
 const Project = mongoose.model("Project", ProjectSchema);
-
 
 exports.Issue = Issue;
 exports.Project = Project;
