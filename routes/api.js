@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const { Project } = require("../models.js");
 const IssueModel = require("../models.js").Issue;
 const ProjectModel = require("../models.js").Project;
-const ObjectId = mongoose.Types.ObjectId; 
+const ObjectId = mongoose.Types.ObjectId;
 
 module.exports = function (app) {
   app
@@ -41,8 +41,14 @@ module.exports = function (app) {
       let projectName = req.params.project;
 
       //establish the request info to be sent
-      const { _id, issue_title, issue_text, created_by, assigned_to, status_text } =
-        req.body;
+      const {
+        _id,
+        issue_title,
+        issue_text,
+        created_by,
+        assigned_to,
+        status_text,
+      } = req.body;
 
       //check if missing title, test, or created by
       if (!issue_title || !issue_text || !created_by) {
@@ -84,8 +90,15 @@ module.exports = function (app) {
       let projectName = req.params.project;
 
       //establish the request info to be sent
-      const { _id, issue_title, issue_text, created_by, assigned_to, status_text, open } =
-        req.body;
+      const {
+        _id,
+        issue_title,
+        issue_text,
+        created_by,
+        assigned_to,
+        status_text,
+        open,
+      } = req.body;
 
       //make suere there is an id in the req
       if (!_id) {

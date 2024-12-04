@@ -84,7 +84,6 @@ suite("Functional Tests", function () {
           .get("/api/issues/projects")
           .end(function (err, res) {
             assert.equal(res.status, 200);
-            // assert.equal(res.body.length, 4); //idk what this line is supposed to be doing???
             done();
           });
       }); //end of test 2.1
@@ -131,7 +130,6 @@ suite("Functional Tests", function () {
             issue_title: "different",
           })
           .end(function (err, res) {
-            console.log(res.body);
             assert.equal(res.status, 200);
             assert.equal(res.body.result, "successfully updated");
             assert.equal(res.body._id, issue1._id);
@@ -222,7 +220,6 @@ suite("Functional Tests", function () {
           })
           .end(function (err, res) {
             assert.equal(res.status, 200);
-            console.log(res.body.result);
             assert.equal(res.body.result, "successfully deleted");
           });
         done();
