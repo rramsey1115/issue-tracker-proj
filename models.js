@@ -17,6 +17,7 @@ const Issue = mongoose.model("Issue", IssueSchema);
 
 const ProjectSchema = new Schema({
   name: { type: String, required: true },
+  issues: [IssueSchema]
 });
 
 const Project = mongoose.model("Project", ProjectSchema);
