@@ -62,7 +62,7 @@ module.exports = function (app) {
           projectModel = await projectModel.save();
         }
         //create a new issue
-        const issueModel = new IssueModel({
+        const newIssue = new IssueModel({
           projectId: projectModel._id,
           issue_title: issue_title || "",
           issue_text: issue_text || "",
@@ -74,7 +74,7 @@ module.exports = function (app) {
           status_text: status_text || "",
         });
         //save issue
-        const issue = await issueModel.save();
+        const issue = await newIssue.save();
         res.json(issue);
       } catch (err) {
         //any errors with trigger catch and give the error response
